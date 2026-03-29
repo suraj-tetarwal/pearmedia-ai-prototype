@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Pear Media AI Lab
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pear Media AI Lab is an AI-powered web application that transforms simple user inputs into high-quality, visually rich outputs through structured, multi-step workflows.
 
-## Available Scripts
+The application is designed around two intelligent pipelines:
 
-In the project directory, you can run:
+1. Creative Studio (Text-to-Image Workflow)
+Users start with a basic idea, which is enhanced using an AI prompt engineering model into a detailed, production-quality prompt. The user can review and modify this enhanced prompt (human-in-the-loop) before generating a final image using a diffusion-based model.
 
-### `npm start`
+2. Style Lab (Image-to-Variation Workflow)
+Users upload an image, which is analyzed using a vision model to extract key attributes such as main object, color palette, lighting, and artistic style. These insights are then used to generate new stylistic variations of the original image.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Workflow A – Creative Studio (Text to Image)
+- Enter a simple idea
+- AI enhances it into a detailed prompt
+- User can edit the prompt (human-in-the-loop)
+- Generate high-quality image
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Workflow B – Style Lab (Image to Variations)
+- Upload an image
+- AI analyzes:
+  - Main object
+  - Color palette
+  - Artistic style
+  - Lighting
+- Generate new styled variations
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- Gemini API (Text + Image Analysis)
+- Hugging Face (Stable Diffusion XL for image generation)
+- CSS (Custom styling)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+pearmedia-ai-prototype/
+├── .env                      # Secret API Keys
+├── .gitignore                # Files to ignore (node_modules, .env)
+├── README.md                 # Detailed project documentation
+├── package.json              # Project dependencies
+└── src/
+    ├── App.js                # State management & Main Layout
+    ├── App.css               # Custom styles and animations
+    ├── components/
+    │   ├── Navbar.js         # Navigation and Logo
+    │   ├── WorkflowText.js   # Input, Enhance, Approve, Generate logic
+    │   ├── WorkflowImage.js  # Upload, Analyze, Variation logic
+    │   └── ImageCard.js      # Reusable component to display results
+    └── utils/
+        ├── apiHelpers.js     # All fetch() logic organized by API
+        └── constants.js      # Default prompts and configuration
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setup Instructions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Clone the repository
+```
+git clone https://github.com/suraj-tetarwal/pearmedia-ai-prototype.git
+cd pearmedia-ai-prototype
+```
 
-## Learn More
+### 2. Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Add environment variables
 
-### Code Splitting
+create a ```.env``` file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+REACT_APP_GEMINI_KEY=your_gemini_key
+REACT_APP_HF_TOKEN=your_huggingface_token
+```
 
-### Analyzing the Bundle Size
+### 4. Run the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm start
+```
 
-### Making a Progressive Web App
+Live Demo: live_demo_link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Demo Video: demo_video_link
 
-### Advanced Configuration
+## Key Highlights
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Human-in-the-loop prompt workflow (user can edit AI-generated prompts)
+- End-to-end AI pipeline: Text → Prompt Enhancement → Image Generation
+- Image reverse-engineering using vision model (object, style, lighting)
+- Clean UI with proper loading states and error handling
+- Modular and scalable code structure with separated API logic
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
