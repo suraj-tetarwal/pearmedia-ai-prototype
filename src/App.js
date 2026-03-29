@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+import Navbar from "./components/Navbar";
+import WorkflowText from "./components/WorkflowText";
+import WorkflowImage from "./components/WorkflowImage";
+
+import "./App.css";
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState("text");
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      <div className="card">
+        {activeTab === "text" ? (
+          <WorkflowText isLoading={isLoading} setIsLoading={setIsLoading} />
+        ) : (
+          <WorkflowImage isLoading={isLoading} setIsLoading={setIsLoading} />
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

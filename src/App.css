@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f9fafb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.tabs {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.tab {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tab:hover {
+  background-color: #d1d5db;
+}
+
+.active-tab {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-top: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6366f1;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6366f1;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #4f46e5;
+}
+
+button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.section-description {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+.input {
+  margin-top: 5px;
+}
+
+.textarea {
+  margin-top: 5px;
+}
+
+.primary-button {
+  margin-top: 15px;
+}
+
+.primary-button:hover {
+  background-color: #4f46e5;
+}
+
+.primary-button:disabled {
+  background-color: #a5b4fc;
+}
+
+.secondary-button {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #e5e7eb;
+  color: #111827;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+  background-color: #d1d5db;
+}
+
+.result-image {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.result-image:hover {
+  transform: scale(1.01);
+}
+
+.status-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #4f46e5;
+  background-color: #eef2ff;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.error-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+@media (min-width: 769px) {
+  .app-container {
+    padding: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card {
+    padding: 30px;
   }
 }
