@@ -92,9 +92,27 @@ REACT_APP_HF_TOKEN=your_huggingface_token
 npm start
 ```
 
-Live Demo: live_demo_link
+Live Demo: https://pearmedia-ai-prototype-two.vercel.app/
 
 Demo Video: demo_video_link
+
+## Screenshots
+
+- Creative Studio - input
+
+![input](./screenshots/input.png)
+
+- Enhanced Prompt & Generated image
+
+![generated-image](./screenshots/ehanced-prompt-image.png)
+
+- Style Lab - image input
+ 
+![style-lab-input](./screenshots/style-lab-input.png)
+
+- New Variation Image
+
+![variation](./screenshots/variation-image.png)
 
 ## Key Highlights
 
