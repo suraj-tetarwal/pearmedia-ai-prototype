@@ -94,7 +94,7 @@ npm start
 
 Live Demo: https://pearmedia-ai-prototype-two.vercel.app/
 
-Demo Video: demo_video_link
+Demo Video: https://drive.google.com/file/d/11GOLvXyWRjF3_L-lCtf9sJE9qBEM_vWi/view?usp=drive_link
 
 ## Screenshots
 
